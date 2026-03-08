@@ -1,18 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GitHub Issues Tracker</title>
     <!-- tailwind and daisy ui -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-   <!-- css link -->
-    <link rel="stylesheet" href="./style/style.css">
-</head>
-<body>
-<h2 class="bg-blue-500 underline font-2xl">im back</h2>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- css link -->
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="bg-[#F8FAFC]">
+        <div class="min-h-screen flex items-center justify-center px-4">
+          <form
+            class="w-full max-w-[510px] drop-shadow-lg p-6 sm:p-8 rounded-md bg-white"
+          >
+            <div class="text-center">
+              <img
+                class="mx-auto w-12 sm:w-14"
+                src="./assets/github-logo.png"
+                alt="github logo"
+              />
+              <h2
+                class="font-semibold text-xl sm:text-2xl text-[#1F2937] pt-6 pb-1"
+              >
+                GitHub Issues Tracker
+              </h2>
+
+              <p class="text-[#64748B] text-sm sm:text-base">
+                Sign in to manage your issues
+              </p>
+            </div>
+
+            <div class="mt-6">
+              <label
+                class="font-medium text-sm sm:text-base text-[#1F2937] pb-2 block"
+                for="username"
+              >
+                Username
+              </label>
+              <input
+                class="w-full border border-[#E4E4E7] rounded-[8px] focus:outline-none p-3 sm:p-4"
+                type="text"
+                id="username"
+                placeholder="Enter Username"
+              />
+              <p class="pt-1 text-xs sm:text-sm text-[#4A00FF] mb-4">
+                Default: admin
+              </p>
+
+              <label
+                class="font-medium text-sm sm:text-base text-[#1F2937] block"
+                for="password"
+              >
+                Password
+              </label>
+              <input
+                class="w-full border border-[#E4E4E7] rounded-[8px] focus:outline-none p-3 sm:p-4 mt-2"
+                type="password"
+                id="password"
+                placeholder="Enter Password"
+              />
+              <p class="pt-1 text-xs sm:text-sm text-[#4A00FF] mb-6">
+                Default: admin123
+              </p>
+
+              <button
+                type="button"
+                id="btn"
+                class="bg-[#4A00FF] text-white py-3 rounded-lg w-full font-semibold text-sm sm:text-base hover:bg-opacity-90 transition-all cursor-pointer"
+              >
+                Sign In
+              </button>
+
+              <div class="relative flex py-5 items-center">
+                <div class="flex-grow border-t border-[#E4E4E7]"></div>
+                <span class="flex-shrink mx-4 text-[#64748B] text-sm uppercase"
+                  >OR</span
+                >
+                <div class="flex-grow border-t border-[#E4E4E7]"></div>
+              </div>
+
+              <div class="bg-[#F8FAFC] p-4 rounded-lg text-center">
+                <p class="text-[#64748B] text-xs sm:text-sm mb-2">
+                  Demo Credentials:
+                </p>
+                <div class="text-[#1F2937] text-sm sm:text-base font-medium">
+                  <p>Username: <span class="font-bold">admin</span></p>
+                  <p>Password: <span class="font-bold">admin123</span></p>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
     <!-- js link -->
-     <script src="./js/index.js"></script>
-</body>
+    <script src="./js/index.js"></script>
+  </body>
 </html>
