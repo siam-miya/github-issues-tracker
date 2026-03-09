@@ -36,16 +36,8 @@ function showDetails(id) {
                     </form>
                 </div>
             `;
-    })
-    .catch((err) => {
-      modalBox.innerHTML = `
-                <h3 class="text-lg font-bold text-error">Error!</h3>
-                <p class="py-4">Something went wrong while fetching data.</p>
-                <div class="modal-action">
-                    <form method="dialog"><button class="btn">Close</button></form>
-                </div>
-            `;
     });
+  return;
 }
 
 function displayCards(issues) {
