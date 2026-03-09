@@ -1,19 +1,18 @@
 const issusContent = document.getElementById("issusContent");
 const loadingSpinner = document.getElementById("loading-spinner");
+const issueCountElement = document.getElementById("issue-count"); 
 let allIssues = [];
 
 function displayCards(issues) {
   issusContent.innerHTML = "";
+  issueCountElement.innerText = issues.length;
+
   issues.forEach((element) => {
     const isOpen = element.status === "open";
     const borderColor = isOpen ? "border-t-[#00A96E]" : "border-t-[#FF4444]";
-    const labelsHTML = element.labels
-      .map(
-        (label) =>
-          `<div class="badge badge-soft badge-secondary text-[10px] uppercase">${label}</div>`,
-      )
-      .join("");
-
+    const labelsHTML = element.labels.map((label) =>
+          `<div class="badge badge-soft badge-secondary text-[10px] uppercase">${label}</div>`
+      ).join("");
     const div = document.createElement("div");
     div.innerHTML = `
           <div class="p-[16px] bg-white shadow-md border-t-4 ${borderColor} rounded-lg h-full flex flex-col"> 
@@ -51,6 +50,7 @@ function loadData() {
       loadingSpinner.classList.add("hidden");
     });
 }
+
 document.addEventListener("click", function (e) {
   if (e.target.tagName === "BUTTON") {
     const filterButtons = document.querySelectorAll("button");
@@ -58,15 +58,15 @@ document.addEventListener("click", function (e) {
       btn.classList.add("btn-outline");
       btn.classList.remove("btn-active");
     });
+    
     e.target.classList.remove("btn-outline");
     const filterType = e.target.innerText.trim().toLowerCase();
+
     if (filterType === "all") {
       displayCards(allIssues);
-    }
-     else if (filterType === "open") {
+    } else if (filterType === "open") {
       displayCards(allIssues.filter((issue) => issue.status === "open"));
-    } 
-    else if (filterType === "closed") {
+    } else if (filterType === "closed") {
       displayCards(allIssues.filter((issue) => issue.status === "closed"));
     }
   }
